@@ -68,16 +68,16 @@ if __name__ =='__main__':
 	print('Calculating Beta')
 	beta = bcut(sp.beta(X,Y),grid)
 
-	#==========================================
-	#Save as png image (handles large grid)
-	#==========================================
+	#====================================================================================
+	#Save as png image (cool AND handles a large grid size)
+	#====================================================================================
 	# print('Saving image')
 	# matplotlib.image.imsave(os.getcwd()+'/frames/{}.png'.format(name),beta,cmap=cmap)
 	# input('--Enter--')
 
-	#==========================================
-	#Tri - Surface plot
-	#==========================================
+	#====================================================================================
+	#Tri - Surface plot (cool but can only handle a small grid)
+	#====================================================================================
 	fig = plt.figure()
 	ax = fig.add_subplot(1,1,1,projection ='3d')
 	vis = ax.plot_trisurf(X.flatten(),Y.flatten(),beta.flatten(),cmap=plt.cm.CMRmap)
@@ -86,9 +86,9 @@ if __name__ =='__main__':
 	fig.show()
 	input('--Enter--')
 # 
-	#==========================================
-	#2D Contour plot
-	#==========================================
+	#====================================================================================
+	#2D Contour plot (ugly and only handles a small grid)
+	#====================================================================================
 
 	# fig,ax = plt.subplots(1,1)
 	# ax.set_title('Beta Function')
