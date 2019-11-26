@@ -59,8 +59,8 @@ if __name__ =='__main__':
 	index = 0
 	name = 'grid_1{}_1000'.format(index)
 	# cmap = plt.cm.CMRmap
-	cmap = 'coolwarm'
-	lim = 3; grid =30; #No point going beyond 4k 
+	cmap = 'Spectral'
+	lim = 3; grid = 4000; #No point going beyond 4k 
 	print('Setting up axes')
 	x,y = np.linspace(-lim,lim,grid), np.linspace(-lim,lim,grid)
 	print('Setting up meshgrid')
@@ -71,21 +71,21 @@ if __name__ =='__main__':
 	#====================================================================================
 	#Save as png image (cool AND handles a large grid size)
 	#====================================================================================
-	# print('Saving image')
-	# matplotlib.image.imsave(os.getcwd()+'/frames/{}.png'.format(name),beta,cmap=cmap)
-	# input('--Enter--')
+	print('Saving image')
+	matplotlib.image.imsave(os.getcwd()+'/frames/{}.png'.format(name),beta,cmap=cmap)
+	input('--Enter--')
 
 	#====================================================================================
 	#Tri - Surface plot (cool but can only handle a small grid)
 	#====================================================================================
-	fig = plt.figure()
-	ax = fig.add_subplot(1,1,1,projection ='3d')
-	vis = ax.plot_trisurf(X.flatten(),Y.flatten(),beta.flatten(),cmap=plt.cm.CMRmap)
-	fig.colorbar(vis, shrink=0.5, aspect=5)
+	# fig = plt.figure()
+	# ax = fig.add_subplot(1,1,1,projection ='3d')
+	# vis = ax.plot_trisurf(X.flatten(),Y.flatten(),beta.flatten(),cmap=plt.cm.CMRmap)
+	# fig.colorbar(vis, shrink=0.5, aspect=5)
 
-	fig.show()
-	input('--Enter--')
-# 
+	# fig.show()
+	# input('--Enter--')
+
 	#====================================================================================
 	#2D Contour plot (ugly and only handles a small grid)
 	#====================================================================================
