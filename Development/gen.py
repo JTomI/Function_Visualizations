@@ -8,7 +8,6 @@ from scipy.integrate import quad
 from matplotlib import cm
 from mpl_toolkits.mplot3d import Axes3D
 from tqdm import tqdm
-# from matplotlib.animation import FuncAnimation as animate
 
 def cut(array, zlim=10.0, nanval=0):
 	'''
@@ -104,7 +103,7 @@ def stitch(function, zlims, fname='fname', cmap='Spectral', off=0, fps=20):
 	savemsg = ' :: {}.mp4 saved in {} :: '.format(fname, cwd)
 	return(savemsg)
 
-#-------------------------Miscellaneous Function definitions using gamma or beta with modded Input Grid--------------------------------------- 
+#-------------------------Miscellaneous Function definitions using gamma or beta with modded Input Grid---------------------------------------
 def stripes(xylim=5):
 	'''Calculates some interesting line contours of gamma function in the complex xy-plane.'''
 	X,Y = grid(lim=xylim)
@@ -121,6 +120,7 @@ def tiles(xylim=5):
 def mask(xylim=5):
 	X,Y = grid(lim=xylim)
 	return np.abs(sp.gamma(np.cos(np.sinh(X))-np.sin(np.cosh(Y))))
+#---------------------------------------------------------------------------------------------------------------------------------------------
 
 def main():
 	zlims = np.linspace(.01,10,200)
@@ -137,7 +137,6 @@ def main():
 	# fig.colorbar(vis, shrink=0.5, aspect=5)
 	# fig.show()
 	# input('__Enter__')
-
 
 if __name__ =='__main__':
 	main()
